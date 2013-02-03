@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  artist: MyString
+  featured: MyString
+  album: MyString
+  year: 1
+  top40: 1
+  top10: 1
+  explicit: false
+  spotify-id: MyString
+
+two:
+  name: MyString
+  artist: MyString
+  featured: MyString
+  album: MyString
+  year: 1
+  top40: 1
+  top10: 1
+  explicit: false
+  spotify-id: MyString

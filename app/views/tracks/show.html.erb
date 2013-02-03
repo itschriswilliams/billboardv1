@@ -1,0 +1,50 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @track.name %>
+</p>
+
+<p>
+  <b>Artist:</b>
+  <%= @track.artist %>
+</p>
+
+<p>
+  <b>Featured:</b>
+  <%= @track.featured %>
+</p>
+
+<p>
+  <b>Album:</b>
+  <%= @track.album %>
+</p>
+
+<p>
+  <b>Year:</b>
+  <%= @track.year %>
+</p>
+
+<p>
+  <b>Top40:</b>
+  <%= @track.top40 %>
+</p>
+
+<p>
+  <b>Top10:</b>
+  <%= @track.top10 %>
+</p>
+
+<p>
+  <b>Explicit:</b>
+  <%= @track.explicit %>
+</p>
+
+<p>
+  <b>Spotify-id:</b>
+  <%= @track.spotify-id %>
+</p>
+
+
+<%= link_to 'Edit', edit_track_path(@track) %> |
+<%= link_to 'Back', tracks_path %>
