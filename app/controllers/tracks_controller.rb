@@ -2,11 +2,12 @@ class TracksController < ApplicationController
   # GET /tracks
   # GET /tracks.json
   def index
-    @tracks = Track.paginate(:page => params[:user_page], :per_page => 100)
+    @tracks = Track.paginate(:page => params[:page], :per_page => 100)
 
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @tracks }
+      format.xml { render xml: @tracks }
     end
   end
 
