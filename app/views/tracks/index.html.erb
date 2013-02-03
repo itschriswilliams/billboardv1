@@ -1,42 +1,58 @@
-<h1>Listing tracks</h1>
-
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Artist</th>
-    <th>Featured</th>
-    <th>Album</th>
-    <th>Year</th>
-    <th>Top40</th>
-    <th>Top10</th>
-    <th>Duration</th>
-    <th>Explicit</th>
-    <th>Spotifyid</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @tracks.each do |track| %>
-  <tr>
-    <td><%= track.name %></td>
-    <td><%= track.artist %></td>
-    <td><%= track.featured %></td>
-    <td><%= track.album %></td>
-    <td><%= track.year %></td>
-    <td><%= track.top40 %></td>
-    <td><%= track.top10 %></td>
-    <td><%= track.duration %></td>
-    <td><%= track.explicit %></td>
-    <td><%= track.spotifyid %></td>
-    <td><%= link_to 'Show', track %></td>
-    <td><%= link_to 'Edit', edit_track_path(track) %></td>
-    <td><%= link_to 'Destroy', track, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
-</table>
-
-<%= will_paginate @posts %>
-<br />
-
-<%= link_to 'New Track', new_track_path %>
+<div class="row">
+    <div class="eleven columns centered">
+        <div class="row">
+            <br>
+            <div class="seven columns">
+                <h1><a href="/tracks/">Listing tracks</a></h1>
+                <%= link_to 'New Track', new_track_path %>
+            </div>
+            <div class="five columns">
+                <br><br>
+                
+                <p><%= will_paginate @posts %></p>
+            </div>
+        </div>
+    </div>
+    <br>
+    <table>
+      <tr>
+        <th>Name</th>
+        <th>Artist</th>
+        <!-- <th>Featured</th>
+        <th>Album</th> -->
+        <th>Year</th>
+        <!-- <th>Top40</th>
+        <th>Top10</th>
+        <th>Duration</th>
+        <th>Explicit</th> -->
+        <th>Spotifyid</th>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+    
+    <% @tracks.each do |track| %>
+      <tr>
+        <td><%= track.name %></td>
+        <td><%= track.artist %></td>
+        <!-- <td><%= track.featured %></td>
+        <td><%= track.album %></td> -->
+        <td><%= track.year %></td>
+    <!--     <td><%= track.top40 %></td>
+        <td><%= track.top10 %></td>
+        <td><%= track.duration %></td>
+        <td><%= track.explicit %></td> -->
+        <td><%= track.spotifyid %></td>
+        <td><%= link_to 'Show', track %></td>
+        <td><%= link_to 'Edit', edit_track_path(track) %></td>
+        <td><%= link_to 'Destroy', track, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+    </table>
+    
+    <%= will_paginate @posts %>
+    <br />
+    
+    <%= link_to 'New Track', new_track_path %></div>
+</div>
+<br><br><br><br>
