@@ -8,6 +8,7 @@ one:
   year: 1
   top40: 1
   top10: 1
+  duration: MyString
   explicit: false
   spotifyid: MyString
 
@@ -19,5 +20,6 @@ two:
   year: 1
   top40: 1
   top10: 1
+  duration: MyString
   explicit: false
   spotifyid: MyString
