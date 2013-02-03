@@ -26,7 +26,7 @@
     <td><%= track.top40 %></td>
     <td><%= track.top10 %></td>
     <td><%= track.explicit %></td>
-    <td><%= track.spotifyid %></td>
+    <td><a href="<%= track.spotifyid %>"><%= track.spotifyid %></a></td>
     <td><%= link_to 'Show', track %></td>
     <td><%= link_to 'Edit', edit_track_path(track) %></td>
     <td><%= link_to 'Destroy', track, method: :delete, data: { confirm: 'Are you sure?' } %></td>
