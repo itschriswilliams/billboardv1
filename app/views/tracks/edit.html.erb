@@ -1,7 +1,22 @@
-<div class="row"><div class ="eleven columns centered"><h1>Editing track</h1>
+<div class="row">
+	<div class ="eleven columns centered">
+		<br>
+		<h2>Editing "<%= @track.name %>" <span style="font-size: 22px; ">by <%= @track.artist %></span></h2>
+		<br><br>
 
-<%= render 'form' %>
-
-<%= link_to 'Show', @track %> |
-<%= link_to 'Back', tracks_path %>
-</div></div>
+		<div class="row">
+			<div class="four columns">
+				<iframe src="https://embed.spotify.com/?uri=<%= @track.spotifyid %>" width="300" height="380" frameborder="0" allowtransparency="true"></iframe>
+				<br><br>
+				<%= link_to '< Back', tracks_path %> |
+				<%= link_to 'Show', @track %> 
+				
+			</div>
+			
+			<div class="seven columns">
+				<%= render 'form' %>
+			</div>
+		</div>
+		
+	</div>
+</div>

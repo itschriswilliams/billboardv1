@@ -43,9 +43,24 @@
         <td><%= track.duration %></td>
         <td><%= track.explicit %></td> -->
         <td><%= track.spotifyid %></td>
-        <td><%= link_to 'Show', track %></td>
-        <td><%= link_to 'Edit', edit_track_path(track) %></td>
-        <td><%= link_to 'Destroy', track, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td colspan="3">
+            <div href="#" class="small secondary button split dropdown">
+                <%= link_to 'Show', track %>
+                <span></span>
+                <ul>
+                    <li><a href="<%= track.spotifyid %>">Play</a></li>
+                    <li><%= link_to 'Edit', edit_track_path(track) %></li>
+                    <li class="divider"></li>
+                    <li><%= link_to 'Destroy', track, method: :delete, data: { confirm: 'Are you sure?' } %></li>
+                </ul>
+            </div>
+
+        </td>
+        
+        
+        
+      
+
       </tr>
     <% end %>
     </table>
