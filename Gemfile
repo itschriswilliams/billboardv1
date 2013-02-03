@@ -25,6 +25,8 @@ end
 
 gem 'jquery-rails'
 
+gem 'activerecord-postgresql-adapter'
+
 group :development, :test do
   gem 'sqlite3'
 end
