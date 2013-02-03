@@ -1,14 +1,15 @@
 <p id="notice"><%= notice %></p>
+<br><br><br>
+<div class="row">
+<div class="nine columns centered">
+<div class="row">
+  <div class="three columns">
+  
+  
+  <h2><%= @track.name %></h2>
 
-<p>
-  <b>Name:</b>
-  <%= @track.name %>
-</p>
-
-<p>
-  <b>Artist:</b>
-  <%= @track.artist %>
-</p>
+  <h4><%= @track.artist %></h4>
+<br>
 
 <p>
   <b>Featured:</b>
@@ -45,11 +46,26 @@
   <%= @track.explicit %>
 </p>
 
+<hr>
+<%= link_to 'Back', tracks_path %> |
+<%= link_to 'Edit', edit_track_path(@track) %>
+
+</div>
+<div class="six columns">
 <p>
-  <b>Spotifyid:</b>
-  <%= @track.spotifyid %>
-</p>
+  <br>
 
 
-<%= link_to 'Edit', edit_track_path(@track) %> |
-<%= link_to 'Back', tracks_path %>
+<iframe src="https://embed.spotify.com/?uri=<%= @track.spotifyid %>" width="300" height="380" frameborder="0" allowtransparency="true"></iframe>
+
+
+
+</p>  
+</div>
+
+
+
+</div>
+</div>
+</div>
+
