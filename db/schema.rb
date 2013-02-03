@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130203035708) do
+ActiveRecord::Schema.define(:version => 20130203044916) do
 
   create_table "tracks", :force => true do |t|
     t.string   "name"
@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(:version => 20130203035708) do
     t.integer  "year"
     t.integer  "top40"
     t.integer  "top10"
+    t.string   "duration"
     t.boolean  "explicit"
     t.string   "spotifyid"
     t.datetime "created_at", :null => false
