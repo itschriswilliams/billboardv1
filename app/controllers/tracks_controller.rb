@@ -2,7 +2,7 @@ class TracksController < ApplicationController
   # GET /tracks
   # GET /tracks.json
   def index
-    @tracks = Track.all
+    @tracks = Track.paginate(:page => params[:user_page], :per_page => 100)
 
     respond_to do |format|
       format.html # index.html.erb
