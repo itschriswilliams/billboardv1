@@ -9,7 +9,7 @@ one:
   top40: 1
   top10: 1
   explicit: false
-  spotify-id: MyString
+  spotifyid: MyString
 
 two:
   name: MyString
@@ -20,4 +20,4 @@ two:
   top40: 1
   top10: 1
   explicit: false
-  spotify-id: MyString
+  spotifyid: MyString
