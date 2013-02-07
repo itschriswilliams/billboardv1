@@ -3,12 +3,18 @@
 $(document).ready(function() {
   $.getJSON('http://ws.spotify.com/search/1/track.json?q=<%= @track.name %> <%= @track.artist %>', function(data) {
     var data = data.tracks;
-    var html = '<ol class="list">';  
-    for(var i=1; i<26; i++) {
-        html += "<li>"  + ' ' + data[i].name + ' (' + data[i].artists[0].name + ') [' + data[i].href + ']' + "</li>";
-      console.log(i + ' ' + data[i].name + ' (' + data[i].artists[0].name + ') [' + data[i].href + ']');
+    var firsttrackurl = 'https://embed.spotify.com/?uri=';
+    for(var i=0; i<1; i++) {
+        firsttrackurl += data[i].href;
     }
-    html += "</ol>"
+    var html = '<tr><th></th><th>Name</th><th>Artist</th><th>SpotifyId</th></tr><tr>';  
+    for(var i=0; i<3; i++) {
+        var numbering = i + 1;
+        html += "<td>"  + numbering + '. ' + "</td><td>" + data[i].name + "</td><td>" + data[i].artists[0].name + "</td><td>" + data[i].href + "</td></tr>";
+        console.log(i + ' ' + data[i].name + ' (' + data[i].artists[0].name + ') [' + data[i].href + ']');
+    }
+    html += "</tr>"
+      $('iframe.spotifyembed').attr('src', firsttrackurl);
       $('.spotify_results').html(html);
       console.log();
   });
@@ -35,7 +41,7 @@ $(document).ready(function() {
       </div>
       <div class="six columns">
         <p> <br>
-          <iframe src="https://embed.spotify.com/?uri=<%= @track.spotifyid %>" width="300" height="380" frameborder="0" allowtransparency="true"></iframe>
+          <iframe class="spotifyembed" src="https://embed.spotify.com/?uri=<%= @track.spotifyid %>" width="300" height="380" frameborder="0" allowtransparency="true"></iframe>
         </p>
       </div>
     </div>
@@ -47,11 +53,15 @@ $(document).ready(function() {
       </div>
     </div>
     <div class="row">
-      <div class="three columns">
+      <div class="two columns">
         <h3>Spotify Match Results:</h3>
       </div>
-      <div class="nine columns">
-        <div class="spotify_results"></div>
+      <div class="ten columns">
+        <table>
+          <tbody class="spotify_results"></tbody>
+        </table>
+
+
       </div>
 
     </div>
